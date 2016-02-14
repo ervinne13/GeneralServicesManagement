@@ -21,8 +21,8 @@
             order: [1, "asc"],
             columns: [
                 {data: 'id'},
-                {data: 'assignedTo.display_name', name: 'assigned_to.display_name'},
-//                {data: 'assigned_to_username'},
+//                {data: 'assignedTo.display_name', name: 'assigned_to.display_name'},
+                {data: 'assigned_to_username'},
                 {data: 'task_code'},
                 {data: 'area_code'},
                 {data: 'date_assigned'},
