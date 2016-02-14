@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{config('app.organization')}}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -62,32 +62,35 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .text-red {
+                color: red;                
+            }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
+            <div class="top-right links">
+                @if (Auth::check())
+                <a href="{{ url('/home') }}">Home</a>
+                @else
+                <a href="{{ url('/login') }}">Login</a>                
+                @endif
+            </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <div class="title">
+                        <img src="{{asset("static-img/logo_standalone.jpg")}}" style="margin: auto; height: 200px;">
+                        <br>
+                        <span class="text-red">G</span>eneral <span class="text-red">S</span>erices <span class="text-red">M</span>anagement
+                    </div>
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="www.stdominiccollege.edu.ph">Visit www.stdominiccollege.edu.ph</a>
                 </div>
             </div>
         </div>
