@@ -3,9 +3,9 @@
     <thead>
         <tr>
             <th>  
-                <button class="btn btn-flat btn-sm btn-info">
+                <a href="{{url("vehicles/create")}}" class="btn btn-flat btn-sm btn-info">
                     <i class="fa fa-plus"></i> Create New                                            
-                </button>
+                </a>
             </th>
             <th>Asset ID / Code</th>
             <th>Make</th>

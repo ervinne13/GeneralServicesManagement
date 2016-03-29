@@ -13,8 +13,8 @@ return [
 
     'name'            => 'General Services Management',
     'organization'    => 'St. Dominic College of Asia',
-    'author_link'     => 'https://www.facebook.com/Lhestersy',
-    'author'          => 'Lhester Sy',
+    //    'author_link'     => 'https://www.facebook.com/Lhestersy',
+    //    'author'          => 'Lhester Sy',    
     /*
       |--------------------------------------------------------------------------
       | Application Environment

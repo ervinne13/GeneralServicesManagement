@@ -17,6 +17,9 @@ Auth::routes();
 Route::get('/', "HomeController@index");
 
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::post('files/upload', 'FilesController@upload');
+
     Route::get("tasks/datatable", "TasksController@datatable");
     Route::resource("tasks", "TasksController");
 

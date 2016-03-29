@@ -5,6 +5,9 @@
 (function () {
 
     $(document).ready(function () {
+        
+        datatable_utilities.module_url = baseURL + "/vehicles"
+        
         initializeTable();
         datatable_utilities.initializeDeleteAction();
     });

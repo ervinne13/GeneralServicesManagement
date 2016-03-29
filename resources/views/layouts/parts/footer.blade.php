@@ -4,5 +4,6 @@
         {{config('app.name')}} | {{config('app.organization')}} 
     </div>
     <!-- Default to the left -->
-    <strong>Copyright © 2017 <a href="{{config('app.author_link')}}">{{config('app.author')}}</a>.</strong> All rights reserved.
+    <strong>Copyright © 2017 <a href="javascript:void(0)">{{config('app.organization')}} </a>.</strong> All rights reserved.
+    <!--<strong>Copyright © 2017 <a href="{{config('app.author_link')}}">{{config('app.author')}}</a>.</strong> All rights reserved.-->
 </footer>

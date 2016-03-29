@@ -4,13 +4,12 @@
 
 @section("js")
 
-@include('pages.vehicles.templates')
-
 <script type="text/javascript">
-    var id = '{{$vehicle->id}}';
+    var assetCode = '{{$vehicle->asset_code}}';
     var mode = '{{$mode}}';
 </script>
 
+<script src="{{url("js/image-utils.js")}}"></script>
 <script src="{{url("js/pages/vehicles/form.js")}}"></script>
 
 @endsection
@@ -60,8 +59,19 @@
 
                         <div class="col-lg-6">
 
-                            
-                            
+                            @if ($mode == "VIEW")
+                            <img src="{{ $vehicle->image_url  ? URL::to('/') . $vehicle->image_url : "" }}" width="250px" height="250px" id="image-preview">        
+                            @else
+                            <div id="image-preview-container" class="form-group">
+                                <label for="input-vehicle-image">Profile Image</label>
+                                <input type="file" id="input-vehicle-image" name="image">
+                                <p class="help-block">Ideal size is 250px x 250px</p>
+
+                                <img src="{{ $vehicle->image_url  ? URL::to('/') . $vehicle->image_url : "" }}" width="250px" height="250px" id="image-preview">
+                                <input type="hidden" name="image_url">
+                            </div>
+                            @endif
+
                         </div>
                     </div>
 

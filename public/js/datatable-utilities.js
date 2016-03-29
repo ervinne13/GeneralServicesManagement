@@ -1,7 +1,9 @@
 
 /* global _, data, moment, form_utilities, globals */
 
-var datatable_utilities = {};
+var datatable_utilities = {
+    module_url: window.location.href
+};
 
 //<editor-fold defaultstate="collapsed" desc="Renderers">
 
@@ -79,7 +81,7 @@ datatable_utilities.getAllDefaultActions = function (id) {
 datatable_utilities.getDefaultViewAction = function (id) {
     return {
         id: id,
-        href: window.location.href + "/" + id,
+        href: datatable_utilities.module_url + "/" + id,
         name: "view",
         displayName: "View",
         icon: "fa-search"
@@ -89,7 +91,7 @@ datatable_utilities.getDefaultViewAction = function (id) {
 datatable_utilities.getDefaultEditAction = function (id) {
     return {
         id: id,
-        href: window.location.href + "/" + id + "/edit",
+        href: datatable_utilities.module_url + "/" + id + "/edit",
         name: "edit",
         displayName: "Edit",
         icon: "fa-pencil"
@@ -100,7 +102,7 @@ datatable_utilities.getDefaultEditAction = function (id) {
 datatable_utilities.getDefaultDeleteAction = function (id) {
     return {
         id: id,
-        href: window.location.href + "/" + id,
+        href: datatable_utilities.module_url + "/" + id,
         name: "delete",
         displayName: "Delete",
         icon: "fa-times"
@@ -114,7 +116,7 @@ datatable_utilities.initializeDeleteAction = function () {
         e.preventDefault();
 
         var id = $(this).data('id');
-        var url = window.location.href + "/" + id;
+        var url = datatable_utilities.module_url + "/" + id;
 
         swal({
             title: "Are you sure?",

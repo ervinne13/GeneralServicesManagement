@@ -17,7 +17,7 @@
 
             <div class="form-group">
                 <label>Vehicle <span class="text-danger">*</span></label>
-                <select class="form-control" name="vehicle_reservation_code" required>
+                <select class="form-control" name="vehicle_asset_code" required>
                     <option disabled selected>-- Select a Vehicle --</option>
                     @foreach($vehicles AS $vehicle)
                     <?php $selected = $reservation->vehicle_asset_code == $vehicle->asset_code ? "selected" : "" ?>
@@ -38,13 +38,18 @@
             </div>
 
             <div class="form-group">
+                <label>Reservee / Reserved To <span class="text-danger">*</span></label>
+                <input type="text" required name="reserve_to" class="form-control required" value="{{ $reservation->reserve_to }}">
+            </div>
+
+            <div class="form-group">
                 <label>Contact <span class="text-danger">*</span></label>
-                <input type="text" required name="contact" class="form-control required" value="{{ $vehicle->contact }}">
+                <input type="text" required name="contact" class="form-control required" value="{{ $reservation->contact }}">
             </div>
 
             <div class="form-group">
                 <label>Email <span class="text-danger">*</span></label>
-                <input type="email" required name="email" class="form-control required" value="{{ $vehicle->email }}">
+                <input type="email" required name="email" class="form-control required" value="{{ $reservation->email }}">
             </div>
 
         </div>
@@ -54,30 +59,20 @@
 
             <div class="form-group">
                 <label>Name <span class="text-danger">*</span></label>
-                <input type="text" required name="destination_name" class="form-control required" value="{{ $vehicle->destination_name }}">
+                <input type="text" required name="destination_name" class="form-control required" value="{{ $reservation->destination_name }}">
             </div>
 
             <div class="form-group">
                 <label>Address <span class="text-danger">*</span></label>
-                <textarea name="destination_address" class="form-control required">{{ $vehicle->destination_address }}</textarea>
+                <textarea name="destination_address" class="form-control required">{{ $reservation->destination_address }}</textarea>
             </div>
 
             <div class="form-group">
                 <label>Purpose <span class="text-danger">*</span></label>
-                <textarea name="purpose" class="form-control required">{{ $vehicle->purpose }}</textarea>
+                <textarea name="purpose" class="form-control required">{{ $reservation->purpose }}</textarea>
             </div>
 
         </div>
 
     </div>
 </form>
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="pull-right">
-            <button id="action-reserve" type="button" class="btn btn-primary action-button">Reserve</button>
-        </div>
-    </div>
-</div>
-
-TODO: Saving, editing, application in calendar
