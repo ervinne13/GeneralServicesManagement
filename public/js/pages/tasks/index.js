@@ -5,6 +5,7 @@
 
     $(document).ready(function () {
         initializeTable();
+        datatable_utilities.initializeDeleteAction();
     });
 
 

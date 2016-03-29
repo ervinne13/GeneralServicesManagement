@@ -43,8 +43,6 @@
                             </thead>
                         </table>
 
-                        <p>TODO: delete, edit</p>
-
                     </div>
                 </div>
 

@@ -121,7 +121,11 @@ class TasksController extends Controller {
      * @return Response
      */
     public function destroy($id) {
-        //
+        try {
+            AreaTask::destroy($id);
+        } catch (Exception $ex) {
+            return response($ex->getMessage(), 500);
+        }
     }
 
     protected function getDefaultFormViewData() {
