@@ -18,5 +18,14 @@ class TransportationController extends Controller {
 
         return view("pages.transportation.index", $viewData);
     }
+    
+    public function create() {
+        $viewData = $this->getDefaultViewData();
+        
+//        $viewData[""]
+//        $viewData["mode"] = "create";
+        
+        return view("pages.transportation.form", $viewData);
+    }
 
 }

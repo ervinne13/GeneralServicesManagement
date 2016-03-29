@@ -6,6 +6,7 @@ use App\Models\Vehicle;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Yajra\Datatables\Datatables;
+use function view;
 
 class VehicleController extends Controller {
 
@@ -28,7 +29,13 @@ class VehicleController extends Controller {
      * @return Response
      */
     public function create() {
-        //
+
+        $viewData = $this->getDefaultViewData();
+
+        $viewData["vehicle"] = new Vehicle();
+        $viewData["mode"]    = "create";
+
+        return view("pages.vehicles.form", $viewData);
     }
 
     /**
