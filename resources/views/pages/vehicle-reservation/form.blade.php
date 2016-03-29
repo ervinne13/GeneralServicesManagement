@@ -1,4 +1,4 @@
-<?php $uses = ["datatables"]; ?>
+<?php $uses = ["datatables", "daterange-picker"]; ?>
 
 @extends("layouts.lte")
 
@@ -11,6 +11,7 @@
 
 <script src="{{url("js/image-utils.js")}}"></script>
 <script src="{{url("js/pages/vehicle-reservation/form.js")}}"></script>
+<script src="{{url("js/pages/transportation/reservation.js")}}"></script>
 
 @endsection
 

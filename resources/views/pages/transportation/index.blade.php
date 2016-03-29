@@ -95,6 +95,17 @@ var currentUsername = '{{Auth::user()->username}}';
                             <label class="col-md-5 text-right">Destination: </label>
                             <p class="col-md-7" id="destination"></p>
                         </div>
+
+                        <div class="form-group">
+                            <label class="col-md-5 text-right">Reserved From: </label>
+                            <p class="col-md-7" id="period-from"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-5 text-right">Reserved To: </label>
+                            <p class="col-md-7" id="period-to"></p>
+                        </div>
+
                     </div>
 
                     <!--                    <div class="col-md-4">

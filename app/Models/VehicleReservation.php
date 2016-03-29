@@ -46,6 +46,8 @@ class VehicleReservation extends Model {
             "destination_name",
             "purpose",
             "reserve_to",
+            "period_from",
+            "period_to",
             DB::raw("CONCAT(period_from, '|' ,period_to, '|', vehicle_asset_code) AS id"),
             DB::raw("display_name AS reserved_by_display_name"),
             DB::raw("CONCAT(make, ' ', model, ': ', destination_name) AS title"),

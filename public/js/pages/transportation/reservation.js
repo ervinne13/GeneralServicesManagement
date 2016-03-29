@@ -1,10 +1,10 @@
 
 /* global form_utilities */
 
-(function () {
+var selectedStartDate = new Date();
+var selectedEndDate = new Date();
 
-    var selectedStartDate = new Date();
-    var selectedEndDate = new Date();
+(function () {
 
     $(document).ready(function () {
 
@@ -15,7 +15,13 @@
     });
 
     function initializeUI() {
-        $('#reservationtTime').daterangepicker({}, (start, end) => {
+        $('#reservationtTime').daterangepicker({
+            timePicker: true,
+            timePickerIncrement: 30,
+            locale: {
+                format: 'MM/DD/YYYY h:mm A'
+            }
+        }, (start, end) => {
             selectedStartDate = start;
             selectedEndDate = end;
 
@@ -44,8 +50,8 @@
         let url = baseURL + "/vehicle-reservation";
         let reservation = form_utilities.formToJSON($('#report-form'));
 
-        reservation.period_from = moment(selectedStartDate).format('YYYY-MM-DD');
-        reservation.period_to = moment(selectedEndDate).format('YYYY-MM-DD');
+        reservation.period_from = moment(selectedStartDate).format('YYYY-MM-DD HH:mm');
+        reservation.period_to = moment(selectedEndDate).format('YYYY-MM-DD HH:mm');
 
         $.post(url, reservation, response => {
 
@@ -54,9 +60,9 @@
             let vehicleName = $('[name=vehicle_reservation_code] option:selected').text();
             swal("Reserved!", vehicleName + " is now reserved", "success");
 
-//            setTimeout(function () {
-//                window.location.reload();
-//            }, globals.reloadRedirectWaitTime);
+            setTimeout(function () {
+                window.location.reload();
+            }, globals.reloadRedirectWaitTime);
         }).fail(xhr => {
             console.error(xhr);
             swal("Error", xhr.responseText, "error");
