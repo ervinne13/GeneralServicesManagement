@@ -50,6 +50,14 @@ class AreaTask extends Model {
         return $query->where("date_assigned", $date);
     }
 
+    public function scopeFallsWithinPeriod($query, $date, $timeFrom, $timeTo) {
+        return $query
+                        ->where("date_assigned", $date)
+                        ->where("from", ">=", $timeFrom)
+                        ->where("to", "<=", $timeTo)
+        ;
+    }
+
     public function scopeAssignedToday($query) {
         return $query->where("date_assigned", date("Y-m-d"));
     }

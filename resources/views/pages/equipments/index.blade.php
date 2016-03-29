@@ -20,10 +20,10 @@
                 <i class="fa fa-users"></i>
                 <h3 class="box-title">Equipments</h3>
                 <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
-                    <button href="{{url("equipments/create")}}" class="btn btn-info btn-flat">
+                    <a href="{{url("equipments/create")}}" class="btn btn-info btn-flat">
                         <i class="fa fa-plus"></i>
                         Create New                            
-                    </button>
+                    </a>
                     <button id="action-borrow" class="btn btn-success btn-flat">                        
                         Borrow
                     </button>

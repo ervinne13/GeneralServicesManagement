@@ -4,6 +4,8 @@
 
 @section('js')
 
+@include('pages.employees.templates')
+
 <script type="text/javascript">
     var id = '{{$task->id}}';
     var mode = '{{$mode}}';
@@ -101,6 +103,19 @@
 
                     </div>
                     <div class="col-md-6">
+
+                        <h4>Assigned Tasks For Today <small>{{date("m/d/y")}}</small></h4>
+                        <table id="employee-tasks-table" class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Area</th>
+                                    <th>Task</th>
+                                    <th>Time</th>                                    
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
                         <p>TODO: show employee task schedule for the day when selected here</p>
 
                         <p>TODO: add validation that if the employee is already booked for the selected time, the task won't save</p>

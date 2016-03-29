@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Area;
 use App\Models\AreaTask;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Yajra\Datatables\Datatables;
+use function response;
 use function view;
 
 class EmployeesController extends Controller {
@@ -41,7 +42,12 @@ class EmployeesController extends Controller {
      * @return Response
      */
     public function create() {
-        
+        $viewData = $this->getDefaultViewData();
+
+        $viewData["employee"] = new User();
+        $viewData["mode"]     = "create";
+
+        return view("pages.employees.form", $viewData);
     }
 
     /**
@@ -51,7 +57,15 @@ class EmployeesController extends Controller {
      * @return Response
      */
     public function store(Request $request) {
-        //
+        try {
+
+            $employee            = new User($request->toArray());
+            $employee->role_code = "employee";
+
+            $employee->save();
+        } catch (Exception $e) {
+            return response($e->getMessage(), 500);
+        }
     }
 
     /**
@@ -71,7 +85,12 @@ class EmployeesController extends Controller {
      * @return Response
      */
     public function edit($id) {
-        //
+        $viewData = $this->getDefaultViewData();
+
+        $viewData["employee"] = User::find($id);
+        $viewData["mode"]     = "edit";
+
+        return view("pages.employees.form", $viewData);
     }
 
     /**
@@ -82,7 +101,16 @@ class EmployeesController extends Controller {
      * @return Response
      */
     public function update(Request $request, $id) {
-        //
+        try {
+
+            $employee            = User::find($id);
+            $employee->fill($request->toArray());
+            $employee->role_code = "employee";
+
+            $employee->save();
+        } catch (Exception $e) {
+            return response($e->getMessage(), 500);
+        }
     }
 
     /**

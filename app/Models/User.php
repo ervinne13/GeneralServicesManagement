@@ -31,9 +31,22 @@ class User extends Authenticatable {
         'password', 'remember_token',
     ];
 
+    //
+    /**/
+    // <editor-fold defaultstate="collapsed" desc="Relationships">
+
     public function role() {
         return $this->belongsTo(Role::class, "role_code");
     }
+
+    public function assignedTasks() {
+        return $this->hasMany(AreaTask::class, "assigned_to_username");
+    }
+
+    // </editor-fold>
+
+    /**/
+    // <editor-fold defaultstate="collapsed" desc="Scopes">
 
     public function scopeActive($query) {
         return $query->where("is_active", "1");
@@ -43,4 +56,5 @@ class User extends Authenticatable {
         return $query->where("role_code", "employee");
     }
 
+    // </editor-fold>
 }

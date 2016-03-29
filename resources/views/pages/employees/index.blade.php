@@ -60,9 +60,6 @@
                     </div>
                 </div>
 
-                <div class="col-lg-12">
-                    <p>TODO: view, delete, edit</p>
-                </div>
             </div>
         </div>   
     </section>

@@ -80,6 +80,37 @@
 
         });
 
+        $('#equipments-datatable').on('click', '.action-delete', function () {
+
+            var id = $(this).data('id');
+
+            swal({
+                title: "Are you sure?",
+                text: "This equipment, and it's location entries will be deleted! This cannot be reverted",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            }).then(function () {
+
+                let url = baseURL + "/equipments/" + id;
+                $.ajax({
+                    url: url,
+                    type: 'DELETE',
+                    success: function (result) {
+                        swal("Deleted!", "Your equipment has been deleted.", "success");
+
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, globals.reloadRedirectWaitTime);
+
+                    }
+                });
+
+            });
+        });
+
     }
 
     function getEquipmentLocations(id) {
