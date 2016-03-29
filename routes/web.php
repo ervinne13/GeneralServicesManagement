@@ -31,8 +31,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get("transportation", "TransportationController@index");
 
-    Route::get("equipments/{id}/locations", "EquipmentsController@equipmentLocations");
     Route::get("equipments/datatable", "EquipmentsController@datatable");
+    Route::post("equipments/borrow", "EquipmentsController@borrowEquipment");
+    Route::post("equipments/return", "EquipmentsController@returnEquipment");
+    Route::get("equipments/{id}/locations", "EquipmentsController@equipmentLocations");
+    Route::get("equipments/{id}/stock-info", "EquipmentsController@equipmentStockInfo");
     Route::resource("equipments", "EquipmentsController");
 
     Route::get("employee/{username}/tasksToday", "EmployeesController@tasksToday");

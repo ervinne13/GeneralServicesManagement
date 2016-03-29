@@ -4,6 +4,7 @@
 
 @section("js")
 
+@include('pages.equipments.modals')
 @include('pages.equipments.templates')
 
 <script src="{{url("js/pages/equipments/index.js")}}"></script>
@@ -24,10 +25,10 @@
                         <i class="fa fa-plus"></i>
                         Create New                            
                     </a>
-                    <button id="action-borrow" class="btn btn-success btn-flat">                        
+                    <button id="action-borrow" class="btn btn-success btn-flat" data-toggle="modal" data-target="#borrow-equipment-modal">
                         Borrow
                     </button>
-                    <button id="action-return" class="btn btn-success btn-flat">                        
+                    <button id="action-return" class="btn btn-success btn-flat" data-toggle="modal" data-target="#return-equipment-modal">
                         Return
                     </button>
                 </div>
@@ -65,9 +66,6 @@
                     </div>
                 </div>
 
-                <div class="col-lg-12">
-                    <p>TODO: view, delete, edit</p>
-                </div>
             </div>
         </div>   
     </section>

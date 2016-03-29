@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Area;
 use App\Models\Equipment;
 use App\Models\EquipmentLocation;
 use Exception;
@@ -20,6 +21,10 @@ class EquipmentsController extends Controller {
      */
     public function index() {
         $viewData = $this->getDefaultViewData();
+
+        $viewData["equipments"] = Equipment::all();
+        $viewData["areas"]      = Area::all();
+
         return view("pages.equipments.index", $viewData);
     }
 
@@ -29,6 +34,46 @@ class EquipmentsController extends Controller {
 
     public function equipmentLocations($id) {
         return EquipmentLocation::EquipmentId($id)->with("area")->get();
+    }
+
+    public function equipmentStockInfo($equipmentId, Request $request) {
+        $equipment = Equipment::find($equipmentId);
+
+        $stocksOnArea = 0;
+        if ($request->area) {
+            $equipmentLocation = EquipmentLocation::EquipmentId($equipmentId)->area($request->area)->first();
+
+            if ($equipmentLocation) {
+                $stocksOnArea = $equipmentLocation->qty;
+            }
+        }
+
+        return [
+            "stocks_on_hand" => $equipment->getOnHandQty(),
+            "stocks_on_area" => $stocksOnArea
+        ];
+    }
+
+    public function borrowEquipment(Request $request) {
+        try {
+            $equipment                  = Equipment::find($request->equipment_id);
+            $resultingEquipmentLocation = $equipment->borrowEquipment($request->area_code, $request->qty);
+            return $resultingEquipmentLocation;
+        } catch (Exception $e) {
+            throw $e;
+//            return response($e->getMessage(), 500);
+        }
+    }
+
+    public function returnEquipment(Request $request) {
+        try {
+            $equipment                  = Equipment::find($request->equipment_id);
+            $resultingEquipmentLocation = $equipment->returnEquipment($request->area_code, $request->qty);
+            return $resultingEquipmentLocation;
+        } catch (Exception $e) {
+            throw $e;
+//            return response($e->getMessage(), 500);
+        }
     }
 
     /**
