@@ -5,9 +5,9 @@
 (function () {
 
     $(document).ready(function () {
-        
+
         datatable_utilities.module_url = baseURL + "/vehicles"
-        
+
         initializeTable();
         datatable_utilities.initializeDeleteAction();
     });
@@ -44,6 +44,12 @@
                         var view = datatable_utilities.getInlineActionsView(actions);
                         return view;
                     }
+                }, {
+                    targets: 7,
+                    render: function (imageURL) {
+                        return "";
+                    }
+
                 }
             ]
         });

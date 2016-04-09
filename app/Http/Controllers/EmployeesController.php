@@ -30,7 +30,7 @@ class EmployeesController extends Controller {
     //
     // <editor-fold defaultstate="collapsed" desc="API">
 
-    public function tasksToday($username) {
+    public function tasksToday($username) {        
         return AreaTask::EmployeeTasksToday($username)->get();
     }
 

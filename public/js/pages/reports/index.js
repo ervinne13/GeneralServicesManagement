@@ -5,7 +5,7 @@
 
     $(document).ready(function () {
         initializeTable();
-        datatable_utilities.initializeDeleteAction();
+        datatable_utilities.initializeDeleteAction();        
     });
 
 
@@ -33,7 +33,7 @@
                     targets: 0,
                     render: function (id, type, rowData) {
                         var actions;
-                        if (rowData.issued_by_username == currentUsername) {
+                        if (rowData.issued_by_username == currentUsername || currentUsername == "admin") {
                             actions = datatable_utilities.getAllDefaultActions(id);
                         } else {
                             actions = [

@@ -19,7 +19,7 @@
         <div class="box box-danger">
             <div class="box-header">
                 <i class="fa fa-users"></i>
-                <h3 class="box-title">Equipments</h3>
+                <h3 class="box-title">Housekeeping / Equipments</h3>
                 <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
                     <a href="{{url("equipments/create")}}" class="btn btn-info btn-flat">
                         <i class="fa fa-plus"></i>

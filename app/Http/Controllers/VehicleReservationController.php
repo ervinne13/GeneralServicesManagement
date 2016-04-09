@@ -14,13 +14,26 @@ use function view;
 
 class VehicleReservationController extends Controller {
 
+    public function cancelReservation(Request $request) {
+        try {
+            VehicleReservation::
+                    where("period_from", $request->period_from)
+                    ->where("period_to", $request->period_to)
+                    ->where("vehicle_asset_code", $request->vehicle_asset_code)
+                    ->delete()
+            ;
+        } catch (\Exception $e) {
+            return response($e->getMessage(), 500);
+        }
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
     public function index() {
-          return redirect(url("transportation"));
+        return redirect(url("transportation"));
     }
 
     /**

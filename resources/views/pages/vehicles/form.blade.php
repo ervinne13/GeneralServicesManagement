@@ -37,12 +37,12 @@
 
                             <div class="form-group">
                                 <label>Make</label>
-                                <input type="text" required name="make" class="form-control required" value="{{ $vehicle->make }}" placeholder="How many of this equipment exist?">
+                                <input type="text" required name="make" class="form-control required" value="{{ $vehicle->make }}" placeholder="Ex. Toyota, Mitsubishi, etc.">
                             </div>
 
                             <div class="form-group">
                                 <label>Model</label>
-                                <input type="text" required name="model" class="form-control required" value="{{ $vehicle->model }}" placeholder="How many of this equipment exist?">
+                                <input type="text" required name="model" class="form-control required" value="{{ $vehicle->model }}" placeholder="What model is this vehicle?">
                             </div>
 
                             <div class="form-group">

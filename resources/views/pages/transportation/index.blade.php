@@ -121,6 +121,7 @@ var currentUsername = '{{Auth::user()->username}}';
             <div class="modal-footer">
                 <button type="button" class="btn btn-default action-button pull-left" data-dismiss="modal">Close</button>
                 <a id="link-edit-reservation" type="button" href="javascript:void(0)" class="btn btn-primary action-button">Edit</a>
+                <a id="link-cancel-reservation" type="button" href="javascript:void(0)" class="btn btn-danger action-button">Cancel</a>
             </div>
         </div>
         <!-- /.modal-content -->

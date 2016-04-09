@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource("vehicles", "VehicleController");
 
     Route::get("vehicle-reservation/datatable", "VehicleReservationController@datatable");
+    Route::post("vehicle-reservation/cancel", "VehicleReservationController@cancelReservation");
     Route::resource("vehicle-reservation", "VehicleReservationController");
 
     Route::get("transportation", "TransportationController@index");

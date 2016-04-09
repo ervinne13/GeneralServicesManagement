@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Traits\DateFormattable;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class AreaTask extends Model {
@@ -58,8 +59,8 @@ class AreaTask extends Model {
         ;
     }
 
-    public function scopeAssignedToday($query) {
-        return $query->where("date_assigned", date("Y-m-d"));
+    public function scopeAssignedToday($query) {               
+        return $query->where("date_assigned", Carbon::today()->toDateString());
     }
 
     // </editor-fold>

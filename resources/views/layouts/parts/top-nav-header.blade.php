@@ -13,7 +13,7 @@
                 <ul id="navbar-link-container" class="nav navbar-nav">
                     <li><a href="{{url('tasks')}}">Task</a></li>
                     <li><a href="{{url('employees')}}">Employees</a></li>
-                    <li><a href="{{url('equipments')}}">Equipments</a></li>
+                    <li><a href="{{url('equipments')}}">Housekeeping</a></li>
                     <li><a href="{{url('reports')}}">Reports</a></li>
                     <li><a href="{{url('transportation')}}">Transportation</a></li>
 <!--                    <li class="dropdown">

@@ -4,7 +4,7 @@
 
 @section("js")
 <script type="text/javascript">
-    var currentUsername = {{Auth::user()->username}}
+    var currentUsername = '{{Auth::user()->username}}'
 </script>
 <script src="{{url("js/pages/reports/index.js")}}"></script>
 
