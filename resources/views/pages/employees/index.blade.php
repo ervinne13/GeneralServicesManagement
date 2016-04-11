@@ -6,6 +6,10 @@
 
 @include('pages.employees.templates')
 
+<script>
+    var type = '{{$type}}';
+</script>
+
 <script src="{{url("js/pages/employees/index.js")}}"></script>
 
 @endsection
@@ -18,9 +22,9 @@
         <div class="box box-danger">
             <div class="box-header">
                 <i class="fa fa-users"></i>
-                <h3 class="box-title">Employees</h3>
+                <h3 class="box-title">{{$type == "housekeeping" ? "Housekeeping Employees" : "Security Employees"}}</h3>
                 <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
-                    <a href="{{url("employees/create")}}" class="btn btn-info btn-flat">
+                    <a href="{{url("{$type}/create")}}" class="btn btn-info btn-flat">
                         <i class="fa fa-plus"></i>
                         Create New                            
                     </a>

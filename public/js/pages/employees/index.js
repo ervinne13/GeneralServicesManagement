@@ -10,8 +10,7 @@
         initializeTemplates();
         initializeTable();
 
-        initializeEvents();
-
+        initializeEvents();        
     });
 
     function initializeTemplates() {
@@ -27,7 +26,7 @@
                 caseInsensitive: true
             },
             ajax: {
-                url: baseURL + "/employees/datatable"
+                url: baseURL + "/" + type + "/datatable"
             },
             order: [1, "asc"],
             columns: [

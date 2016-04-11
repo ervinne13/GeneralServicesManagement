@@ -9,6 +9,7 @@
 <script type="text/javascript">
     var username = '{{$employee->username}}';
     var mode = '{{$mode}}';
+    var type = '{{$type}}';
 </script>
 
 <script type="text/html" id="password-fields-template">

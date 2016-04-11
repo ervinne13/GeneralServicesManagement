@@ -35,6 +35,9 @@
 
         $('[name=assigned_to_username]').change(function () {
             var username = $(this).val();
+            let roleCode = $(this).find('option:selected').data('role-code');
+
+            filterAvailableTasks(roleCode);
 
             $.when(getTasksToday(username)).then(
                     function (tasks) {
@@ -60,6 +63,20 @@
         form_utilities.updateObjectId = id;
         form_utilities.validate = true;
         form_utilities.initializeDefaultProcessing($('.fields-container'));
+    }
+
+    function filterAvailableTasks(roleCode) {
+
+        $('[name=task_code] option').each(function () {
+            let optionRoleCode = $(this).data('role-code');
+            if (roleCode != optionRoleCode) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
+//            $(this).prop('disabled', roleCode != optionRoleCode);
+        });
+
     }
 
     function getTasksToday(username) {

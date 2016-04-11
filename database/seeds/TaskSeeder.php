@@ -12,8 +12,11 @@ class TaskSeeder extends Seeder {
      */
     public function run() {
         $tasks = [
-            ["code" => "gen-clean", "name" => "General Cleaning"],
-            ["code" => "AC-install", "name" => "Aircon Installation"],
+            ["role_code" => "emp_hk", "code" => "gen-clean", "name" => "General Cleaning"],
+            ["role_code" => "emp_hk", "code" => "AC-install", "name" => "Aircon Installation"],
+            ["role_code" => "emp_sec", "code" => "patrol", "name" => "Patrol"],
+            ["role_code" => "emp_sec", "code" => "detailing", "name" => "Detailing"],
+            ["role_code" => "emp_sec", "code" => "duty", "name" => "Duty"],
         ];
 
         Task::insert($tasks);

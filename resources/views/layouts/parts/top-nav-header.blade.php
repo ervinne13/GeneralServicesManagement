@@ -11,23 +11,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                 <ul id="navbar-link-container" class="nav navbar-nav">
-                    <li><a href="{{url('tasks')}}">Task</a></li>
-                    <li><a href="{{url('employees')}}">Employees</a></li>
-                    <li><a href="{{url('equipments')}}">Housekeeping</a></li>
-                    <li><a href="{{url('reports')}}">Reports</a></li>
-                    <li><a href="{{url('transportation')}}">Transportation</a></li>
-<!--                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>-->
+                    @foreach($views AS $viewURL => $viewName)
+                    <li><a href="{{url($viewURL)}}">{{$viewName}}</a></li>
+                    @endforeach                                                          
                 </ul>
             </div><!-- /.navbar-collapse -->
             <!-- Navbar Right Menu -->

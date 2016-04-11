@@ -21,7 +21,7 @@
     });
 
     function initializeFormUtils() {
-        form_utilities.moduleUrl = "/employees";
+        form_utilities.moduleUrl = "/" + type;
         form_utilities.updateObjectId = username;
         form_utilities.validate = true;
         form_utilities.initializeDefaultProcessing($('.fields-container'));

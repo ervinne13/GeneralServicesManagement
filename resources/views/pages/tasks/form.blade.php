@@ -36,7 +36,7 @@
                                     <option disabled selected>-- Select an Employee --</option>
                                     @foreach($employees AS $employee)
                                     <?php $selected = $task->assigned_to_username == $employee->username ? "selected" : "" ?>
-                                    <option value="{{$employee->username}}" {{$selected}}>{{$employee->display_name}}</option>
+                                    <option data-role-code="{{$employee->role_code}}" value="{{$employee->username}}" {{$selected}}>{{$employee->display_name}}</option>
                                     @endforeach
                                 </select>                                    
                             </div>
@@ -58,7 +58,7 @@
                                     <option disabled selected>-- Select a Task --</option>
                                     @foreach($tasks AS $task)
                                     <?php $selected = $task->task_code == $task->code ? "selected" : "" ?>;
-                                    <option value="{{$task->code}}" {{$selected}}>{{$task->name}}</option>
+                                    <option data-role-code="{{$task->role_code}}" value="{{$task->code}}" {{$selected}}>{{$task->name}}</option>
                                     @endforeach
                                 </select>                                    
                             </div>
@@ -116,11 +116,11 @@
                             </thead>
                             <tbody></tbody>
                         </table>
-                        <p>TODO: show employee task schedule for the day when selected here</p>
+<!--                        <p>TODO: show employee task schedule for the day when selected here</p>
 
                         <p>TODO: add validation that if the employee is already booked for the selected time, the task won't save</p>
 
-                        <p>TODO: other validations</p>
+                        <p>TODO: other validations</p>-->
 
                     </div>
 

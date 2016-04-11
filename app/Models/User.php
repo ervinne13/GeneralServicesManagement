@@ -53,7 +53,17 @@ class User extends Authenticatable {
     }
 
     public function scopeEmployee($query) {
-        return $query->where("role_code", "employee");
+        return $query
+                        ->where("role_code", "emp_hk")
+                        ->orWhere("role_code", "emp_sec");
+    }
+
+    public function scopeHousekeeping($query) {
+        return $query->where("role_code", "emp_hk");
+    }
+
+    public function scopeSecurity($query) {
+        return $query->Where("role_code", "emp_sec");
     }
 
     // </editor-fold>

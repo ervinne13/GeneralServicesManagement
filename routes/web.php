@@ -45,4 +45,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get("employee/{username}/tasksToday", "EmployeesController@tasksToday");
     Route::get("employees/datatable", "EmployeesController@datatable");
     Route::resource("employees", "EmployeesController");
+
+    Route::get("housekeeping/datatable", "HousekeepingController@datatable");
+    Route::resource("housekeeping", "HousekeepingController");
+
+    Route::get("security/datatable", "SecurityController@datatable");
+    Route::resource("security", "SecurityController");
 });

@@ -14,7 +14,8 @@ class DefaultRoleAndUserSeeder extends Seeder {
     public function run() {
         $roles = [
             ["code" => "admin", "name" => "Administrator"],
-            ["code" => "employee", "name" => "Employee"]
+            ["code" => "emp_hk", "name" => "Housekeeping Employee"],
+            ["code" => "emp_sec", "name" => "Security Employee"]
         ];
 
         Role::insert($roles);
@@ -27,14 +28,13 @@ class DefaultRoleAndUserSeeder extends Seeder {
         $admin->save();
 
         $employees = [
-            ["username" => "juandc", "display_name" => "Juan Dela Cruz"],
-            ["username" => "lizethb", "display_name" => "Lizeth Batarao"],
-            ["username" => "ehmarv", "display_name" => "Ehmar Villalon"],
-            ["username" => "gaba", "display_name" => "Gabrielle Agalo-os"],
+            ["username" => "juandc", "display_name" => "Juan Dela Cruz", "role_code" => "emp_hk"],
+            ["username" => "lizethb", "display_name" => "Lizeth Batarao", "role_code" => "emp_hk"],
+            ["username" => "ehmarv", "display_name" => "Ehmar Villalon", "role_code" => "emp_sec"],
+            ["username" => "gaba", "display_name" => "Gabrielle Agalo-os", "role_code" => "emp_sec"],
         ];
 
         for ($i = 0; $i < count($employees); $i ++) {
-            $employees[$i]["role_code"] = "employee";
             $employees[$i]["password"] = \Hash::make("password");
         }
 
