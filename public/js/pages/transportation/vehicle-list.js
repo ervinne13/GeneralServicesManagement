@@ -32,7 +32,7 @@
                 {data: 'body_style'},
                 {data: 'capacity'},
                 {data: 'status'},
-                {data: 'image_url'}
+//                {data: 'image_url'}
             ],
             columnDefs: [
                 {searchable: false, targets: [0]},
@@ -44,13 +44,14 @@
                         var view = datatable_utilities.getInlineActionsView(actions);
                         return view;
                     }
-                }, {
-                    targets: 7,
-                    render: function (imageURL) {
-                        return "";
-                    }
-
-                }
+                },
+//                {
+//                    targets: 7,
+//                    render: function (imageURL) {
+//                        return "";
+//                    }
+//
+//                }
             ]
         });
 

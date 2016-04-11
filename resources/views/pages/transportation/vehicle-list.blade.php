@@ -13,7 +13,7 @@
             <th>Body Style</th>
             <th>Capacity</th>
             <th>Status</th>
-            <th>Image Preview</th>
+            <!--<th>Image Preview</th>-->
         </tr>
     </thead>
 </table>
