@@ -7,7 +7,7 @@
     </a>
 
     @if (Auth::user()->role_code === "admin")    
-    <a class="action-show-assigned-area" data-username="<%= username %>" href="{!! url("employees/<%= username %>/edit") !!}"
+    <a class="action-show-assigned-area" data-username="<%= username %>" href="{!! url("<%= type %>/<%= username %>/edit") !!}"
        data-toggle="tooltip" title="Edit">
        <i class="fa fa-pencil"></i>
     </a>

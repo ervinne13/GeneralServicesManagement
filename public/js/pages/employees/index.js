@@ -49,6 +49,7 @@
                 {
                     targets: [3],
                     render: function (username, display, employee) {
+                        employee.type = type;
                         return showAssignedAreaActionTemplate(employee);
                     }
                 }

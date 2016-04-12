@@ -20,21 +20,21 @@ class Controller extends BaseController {
             "header"    => 'layouts.parts.top-nav-header'
         ];
 
-        if (Auth::user()->role_code == "emp_hk") {
+        if (Auth::check() && Auth::user()->role_code == "emp_hk") {
             $viewData["views"] = [
                 "housekeeping"   => "Housekeeping",
                 "equipments"     => "Equipments",
                 "reports"        => "Reports",
                 "transportation" => "Transportation",
             ];
-        } else if (Auth::user()->role_code == "emp_sec") {
+        } else if (Auth::check() && Auth::user()->role_code == "emp_sec") {
             $viewData["views"] = [
                 "security"       => "Security",
                 "equipments"     => "Equipments",
                 "reports"        => "Reports",
                 "transportation" => "Transportation",
             ];
-        } else if (Auth::user()->role_code == "admin") {
+        } else if (Auth::check() && Auth::user()->role_code == "admin") {
             $viewData["views"] = [
                 "tasks"          => "Task",
                 "security"       => "Security",
