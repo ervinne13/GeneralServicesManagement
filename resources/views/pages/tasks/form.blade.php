@@ -2,13 +2,19 @@
 
 @extends("layouts.lte")
 
+@section('css')
+<link href="{{ asset("vendor/jquery/jquery.timepicker.css")}}" rel="stylesheet" type="text/css" />
+@endsection
+
 @section('js')
 
 @include('pages.employees.templates')
 
+<script src="{{url("vendor/jquery/jquery.timepicker.min.js")}}"></script>
+
 <script type="text/javascript">
-    var id = '{{$task->id}}';
-    var mode = '{{$mode}}';
+var id = '{{$task->id}}';
+var mode = '{{$mode}}';
 </script>
 <script src="{{url("js/pages/tasks/form.js")}}"></script>
 

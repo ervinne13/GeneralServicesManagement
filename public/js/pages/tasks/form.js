@@ -28,6 +28,10 @@
         $('[name=date_assigned]').datepicker();
 //        $('[name=from]').timepicker();
 //        $('[name=to]').timepicker();
+
+        $('[name=from]').timepicker({'timeFormat': 'h:i A'});
+        $('[name=to]').timepicker({'timeFormat': 'h:i A'});
+
     }
 
 
