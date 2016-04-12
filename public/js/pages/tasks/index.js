@@ -41,6 +41,15 @@
                         var view = datatable_utilities.getInlineActionsView(actions);
                         return view;
                     }
+                },
+                {
+                    targets: 5,
+                    render: function (from) {
+                        return from;
+//                        SGFor
+////                        date = new Date();
+////                        return moment(date.format()) + 'T' + from).format("hh:mm A");
+                    }
                 }
             ]
         });

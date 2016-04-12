@@ -26,8 +26,8 @@
 
     function initializeUI() {
         $('[name=date_assigned]').datepicker();
-        $('[name=from]').timepicker();
-        $('[name=to]').timepicker();
+//        $('[name=from]').timepicker();
+//        $('[name=to]').timepicker();
     }
 
 
